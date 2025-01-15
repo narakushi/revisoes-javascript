@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-result {
+    background-color: #242424;
+    width: 200px;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.container-result::before{
+    content: 'Resultado';
+    font-size: 20px;
+    font-weight: 700;
+}
