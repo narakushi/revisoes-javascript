@@ -20,14 +20,16 @@ const counter = () => {
 
    function increment() {
         ++count;
+        console.log(count);
     }
 
-    increment();
-    increment();
-
-    return count;
+    return increment;
 }
 
-console.log(counter());
+const increment = counter();
+
+increment();
+increment();
+increment();
 
 
