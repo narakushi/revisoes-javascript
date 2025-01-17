@@ -9,15 +9,16 @@ Teste criando dois contadores independentes e verifique se eles mantêm valores 
  */
 
 const createCounter = () => {
-    return {
-        count: 0,
+    let count = 0; //antes o contator estava declarado como atributo do obj abaixo
 
+    return {
+       
         increment() {
-            this.count++;
+           count++;
         },
 
         getValue () {
-            return this.count;
+            return count;
         }
     }
 }
