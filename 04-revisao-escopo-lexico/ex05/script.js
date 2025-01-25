@@ -6,20 +6,19 @@ Modifique o exemplo do createMultiplier para que a função retornada tenha dois
 Teste o funcionamento do multiplicador antes e depois de atualizar o valor de n.
  */
 
-const createMultiplier = (n) => {
+// fazendo com base na interpretação de função dentro de função
+// essa função retorna uma função que sempre que acionada, cria um novo objeto
+/*const createMultiplier = (n) => {
 
-    const multiplier = (numero) => {
+    const multiplier = () => {
         return {
-            numero: this.numero,
-
-            multiply() {
-                const result = numero * n;                
-                console.log(result);
+            multiply(numero) {
+                console.log(n * numero);
             },
 
-            updateMultiplier(newNum) {
-                n = newNum;
-                console.log(`Valores serão multiplicados por *${n}* a partir de agora!`);
+            updateMultiplier(newNumber) {
+                n = newNumber;
+                console.log(`multiplicador alterado para ${newNumber}`);
             }
         }
     }
@@ -29,7 +28,31 @@ const createMultiplier = (n) => {
 
 const multiplier = createMultiplier(4);
 
-multiplier(5).multiply(); //passando valor e pedindo multiplicação
-multiplier().updateMultiplier(2);
-multiplier(5).multiply();
+multiplier().multiply(3);
+multiplier().multiply(4);
+multiplier().updateMultiplier(6);
+multiplier().multiply(2);
+multiplier().multiply(3);
+multiplier().multiply(4);*/
 
+/** fazendo com base na interpretação de função que retorna um objeto com métodos */
+
+const createMultiplier = (n) => {
+    return {
+        multiply(numero) {
+            console.log(n * numero);
+        },
+
+        updateMultiplier(newNumber){
+            n = newNumber;
+            console.log(`Multiplicador alterado para ${newNumber}`);
+        }
+    }
+}
+
+const multiplier = createMultiplier(4);
+
+multiplier.multiply(3);
+multiplier.multiply(4)
+multiplier.updateMultiplier(2);
+multiplier.multiply(1);
