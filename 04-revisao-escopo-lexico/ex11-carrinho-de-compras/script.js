@@ -3,7 +3,6 @@
 const createCart = () => {
     const itens = [];
     let total = 0;
-    let index = -1;
 
     return {
         add: function (item) {
@@ -19,26 +18,27 @@ const createCart = () => {
 
         remove: function (name) {
             console.log("******************");
-            for (i in itens) {
-                if (itens[i].name.toUpperCase() == name.toUpperCase()) {
-                    console.log(`${name} foi removida`);
-                    index = i;
-                    
-                }
+            /** substitui um laço for com verificação if */
+            let index = itens.findIndex((item) => item.name.toUpperCase() == name.toUpperCase());
 
-                if (index != -1) {
-                    delete itens[index];
-                    total -= itens[i].price;
-                }
+            if (index != -1) {
+                console.log(`${name} foi removido(a).`)
+                //delete itens[index]; // não remove de verdade nem reordena o array, mantem um <empty> no lugar do valor.
+                total -= itens[index].price;
+                itens.splice(index, 1);
             }
+
             console.log(`Total: ${total.toFixed(2)}`);
         },
 
         listItens: function () {
             console.log("******************");
             console.log("Lista de itens no carrinho.");
-            for (item of itens) {
-                if (item) {
+            if (itens.length === 0) {
+                console.log("Carrinho está vazio!");
+            }
+            else {
+                for (item of itens) {
                     console.log(`${item.name}  ${item.price}`)
                 }
             }
