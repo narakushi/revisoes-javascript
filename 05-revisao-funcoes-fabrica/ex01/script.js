@@ -8,7 +8,7 @@ const createUser = (name, age, email) => {
     email,
 
     greet: function () {
-      console.log(`Olá meu nome é ${this.name} e tenho ${this.age}`);
+      console.log(`Olá meu nome é ${this.name} e tenho ${this.age} anos.`);
     }
   }
 }
@@ -19,5 +19,6 @@ const greet  = user1.greet;
 
 user1.greet();
 user2.greet();
+
 
 greet();
