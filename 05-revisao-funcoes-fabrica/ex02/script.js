@@ -3,51 +3,51 @@
 // um objeto com os métodos increment, decrement e getCount. O contador deve começar em zero.
 
 //Primeira Forma
-const createCounter = () => {
-  let count = 0;
-
-  return {
-    getCount: () => count,
-
-    increment() {
-      count++;
-    },
-
-    decrement() {
-      count--;
-    }
-  }
-}
-
-const count1 = createCounter();
-const count2 = createCounter();
-
-count1.increment();
-count1.increment();
-
-count2.increment();
-
-console.log(count1.getCount());
-console.log(count2.getCount());
-
-//Segunda forma
 // const createCounter = () => {
+//   let count = 0;
+
 //   return {
-//     count: 0,
+//     getCount: () => count,
 
 //     increment() {
-//       this.count++;
+//       count++;
+//     },
+
+//     decrement() {
+//       count--;
 //     }
 //   }
 // }
 
 // const count1 = createCounter();
+// const count2 = createCounter();
 
 // count1.increment();
 // count1.increment();
-// count1.increment();
 
-// console.log(count1.count)
+// count2.increment();
+
+// console.log(count1.getCount());
+// console.log(count2.getCount());
+
+//Segunda forma
+const createCounter = () => {
+  return {
+    count: 0,
+
+    increment() {
+      this.count++;
+    }
+  }
+}
+
+const count1 = createCounter();
+
+count1.increment();
+count1.increment();
+count1.increment();
+
+console.log(count1.count)
 
 //Terceira forma
 
